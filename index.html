@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary entries | nimaylana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+			background-color: #333;
+			color: #eeeeee;
+            padding: 5px 30px 5px 30px;
+			margin: 0;
+        }
+        .row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100%;
+		}
+		.column {
+			display: flex;
+			flex-direction: column;
+			flex-basis: 100%;
+			flex: 1;
+		}
+		.container {
+			padding: 10px 20px 10px 20px;
+		}
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        textarea {
+            width: 500px;
+            height: 60px;
+            font-size: 1.2em;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .emoji-buttons {
+            margin-bottom: 10px;
+        }
+        .emoji-buttons button {
+            font-size: 1em;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .copy-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+<div class="column">
+    <div class="container">
+        <label for="sa">Sa</label>
+        <textarea id="sa" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('sa', '⛅')">⛅</button>
+            <button onclick="insertEmoji('sa', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('sa', '☀️')">☀️</button>
+            <button onclick="insertEmoji('sa', '☁️')">☁️</button>
+            <button onclick="insertEmoji('sa', '❄️')">❄️</button>
+            <button onclick="insertEmoji('sa', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('sa', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('sa', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('sa', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('sa', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('sa')">Copy text</button>
+    </div>
+</div>
+    <!-- Repeat the container for each day -->
+<div class="column">
+    <div class="container">
+        <label for="so">So</label>
+        <textarea id="so" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('so', '⛅')">⛅</button>
+            <button onclick="insertEmoji('so', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('so', '☀️')">☀️</button>
+            <button onclick="insertEmoji('so', '☁️')">☁️</button>
+            <button onclick="insertEmoji('so', '❄️')">❄️</button>
+            <button onclick="insertEmoji('so', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('so', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('so', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('so', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('so', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('so')">Copy text</button>
+    </div>
+</div>
+    <!-- Repeat for Mo, Di, Mi, Do, Fr -->
+
+<div class="column">
+    <div class="container">
+        <label for="mo">Mo</label>
+        <textarea id="mo" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('mo', '⛅')">⛅</button>
+            <button onclick="insertEmoji('mo', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('mo', '☀️')">☀️</button>
+            <button onclick="insertEmoji('mo', '☁️')">☁️</button>
+            <button onclick="insertEmoji('mo', '❄️')">❄️</button>
+            <button onclick="insertEmoji('mo', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('mo', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('mo', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('mo', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('mo', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('mo')">Copy text</button>
+    </div>
+</div>
+<div class="column">
+    <div class="container">
+        <label for="di">Di</label>
+        <textarea id="di" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('di', '⛅')">⛅</button>
+            <button onclick="insertEmoji('di', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('di', '☀️')">☀️</button>
+            <button onclick="insertEmoji('di', '☁️')">☁️</button>
+            <button onclick="insertEmoji('di', '❄️')">❄️</button>
+            <button onclick="insertEmoji('di', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('di', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('di', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('di', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('di', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('di')">Copy text</button>
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+    <div class="container">
+        <label for="mi">Mi</label>
+        <textarea id="mi" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('mi', '⛅')">⛅</button>
+            <button onclick="insertEmoji('mi', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('mi', '☀️')">☀️</button>
+            <button onclick="insertEmoji('mi', '☁️')">☁️</button>
+            <button onclick="insertEmoji('mi', '❄️')">❄️</button>
+            <button onclick="insertEmoji('mi', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('mi', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('mi', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('mi', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('mi', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('mi')">Copy text</button>
+    </div>
+</div>
+<div class="column">
+    <div class="container">
+        <label for="do">Do</label>
+        <textarea id="do" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('do', '⛅')">⛅</button>
+            <button onclick="insertEmoji('do', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('do', '☀️')">☀️</button>
+            <button onclick="insertEmoji('do', '☁️')">☁️</button>
+            <button onclick="insertEmoji('do', '❄️')">❄️</button>
+            <button onclick="insertEmoji('do', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('do', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('do', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('do', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('do', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('do')">Copy text</button>
+    </div>
+</div>
+<div class="column">
+    <div class="container">
+        <label for="fr">Fr</label>
+        <textarea id="fr" rows="10"></textarea>
+        <div class="emoji-buttons">
+            <button onclick="insertEmoji('fr', '⛅')">⛅</button>
+            <button onclick="insertEmoji('fr', '🌦️')">🌦️</button>
+            <button onclick="insertEmoji('fr', '☀️')">☀️</button>
+            <button onclick="insertEmoji('fr', '☁️')">☁️</button>
+            <button onclick="insertEmoji('fr', '❄️')">❄️</button>
+            <button onclick="insertEmoji('fr', '🌧️')">🌧️</button>
+            <button onclick="insertEmoji('fr', '⛈️')">⛈️</button>
+            <button onclick="insertEmoji('fr', '🌩️')">🌩️</button>
+            <button onclick="insertEmoji('fr', '🌫️')">🌫️</button>
+            <button onclick="insertEmoji('fr', '🌬️')">🌬️</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard('fr')">Copy text</button>
+    </div>
+</div>
+</div>
+    <script>
+function insertEmoji(fieldId, emoji) {
+    const textarea = document.getElementById(fieldId);
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    textarea.setRangeText(emoji, start, end, 'end');
+    textarea.focus();
+}
+
+function copyToClipboard(fieldId) {
+    const textarea = document.getElementById(fieldId);
+    textarea.select();
+
+    // Use the Clipboard API
+    navigator.clipboard.writeText(textarea.value).then(() => {
+        console.log('Text copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+
+    </script>
+</body>
+</html>
