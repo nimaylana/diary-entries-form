@@ -68,5 +68,6 @@ textarea {
 	font-size:0.85em;
 }
 button {
-	margin:2px; cursor:pointer;
+	margin:2px;
+	cursor:pointer;
 }
