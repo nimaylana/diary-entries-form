@@ -10,6 +10,12 @@
 	<link rel="stylesheet" href="css/diary-entries.css" />
 </head>
 <body>
+
+<div class="container">
+<label>First entry date</label>
+<input type="date" id="startDate">
+</div>
+
 <div class="row">
 <div class="column">
     <div class="container">
@@ -27,6 +33,25 @@
             <button onclick="insertEmoji('sa', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('sa', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="sa-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('sa','location','Wien')">Wien</button>
+		<button onclick="addTag('sa','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('sa','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('sa','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('sa','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('sa',0)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('sa')">Copy text</button>
     </div>
 </div>
@@ -47,6 +72,25 @@
             <button onclick="insertEmoji('so', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('so', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="so-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('so','location','Wien')">Wien</button>
+		<button onclick="addTag('so','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('so','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('so','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('so','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('so',1)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('so')">Copy text</button>
     </div>
 </div>
@@ -68,6 +112,25 @@
             <button onclick="insertEmoji('mo', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('mo', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="mo-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('mo','location','Wien')">Wien</button>
+		<button onclick="addTag('mo','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('mo','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('mo','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('mo','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('mo',2)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('mo')">Copy text</button>
     </div>
 </div>
@@ -87,6 +150,25 @@
             <button onclick="insertEmoji('di', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('di', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="di-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('di','location','Wien')">Wien</button>
+		<button onclick="addTag('di','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('di','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('di','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('di','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('di',3)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('di')">Copy text</button>
     </div>
 </div>
@@ -108,6 +190,25 @@
             <button onclick="insertEmoji('mi', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('mi', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="mi-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('mi','location','Wien')">Wien</button>
+		<button onclick="addTag('mi','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('mi','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('mi','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('mi','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('mi',4)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('mi')">Copy text</button>
     </div>
 </div>
@@ -127,6 +228,25 @@
             <button onclick="insertEmoji('do', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('do', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="do-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('do','location','Wien')">Wien</button>
+		<button onclick="addTag('do','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('do','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('do','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('do','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('do',5)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('do')">Copy text</button>
     </div>
 </div>
@@ -146,17 +266,148 @@
             <button onclick="insertEmoji('fr', '🌫️')">🌫️</button>
             <button onclick="insertEmoji('fr', '🌬️')">🌬️</button>
         </div>
+		
+		<div class="tagbox" id="fr-tags"></div>
+
+		<!-- location tags -->
+		<button onclick="addTag('fr','location','Wien')">Wien</button>
+		<button onclick="addTag('fr','location','Wels')">Wels</button>
+		<input placeholder="add location tag"
+		onkeydown="if(event.key==='Enter'){addTag('fr','location',this.value);this.value=''}">
+
+		<br>
+
+		<!-- general tags -->
+		<button onclick="addTag('fr','general','Extern')">Extern</button>
+		<input placeholder="add general tag"
+		onkeydown="if(event.key==='Enter'){addTag('fr','general',this.value);this.value=''}">
+
+		<br>
+
+		<button class="save-btn" onclick="saveMd('fr',6)">Save as md</button>
         <button class="copy-btn" onclick="copyToClipboard('fr')">Copy text</button>
     </div>
 </div>
 </div>
-    <script>
+
+<script>
 function insertEmoji(fieldId, emoji) {
     const textarea = document.getElementById(fieldId);
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
     textarea.setRangeText(emoji, start, end, 'end');
     textarea.focus();
+}
+
+const tags = {
+  sa:{location:[],general:["Extern"]},
+  so:{location:[],general:["Extern"]},
+  mo:{location:[],general:["Extern"]},
+  di:{location:[],general:["Extern"]},
+  mi:{location:[],general:["Extern"]},
+  do:{location:[],general:["Extern"]},
+  fr:{location:[],general:["Extern"]},
+};
+
+function addTag(id,type,value){
+  value = value.trim();
+  if(!value) return;
+
+  if(!tags[id][type].includes(value)){
+    tags[id][type].push(value);
+  }
+  renderTags(id);
+}
+
+function removeTag(id,type,value){
+  tags[id][type] = tags[id][type].filter(t=>t!==value);
+  renderTags(id);
+}
+
+function renderTags(id){
+  const box = document.getElementById(id+'-tags');
+  box.innerHTML='';
+
+  ['general','location'].forEach(type=>{
+    tags[id][type].forEach(t=>{
+      const el=document.createElement('span');
+      el.className='tag';
+      el.textContent=t;
+      el.onclick=()=>removeTag(id,type,t);
+      box.appendChild(el);
+    });
+  });
+}
+
+function formatDate(baseDate, offset){
+  const d = new Date(baseDate);
+  d.setDate(d.getDate()+offset);
+
+  const months=["Jänner","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+  const weekdays=["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+
+  const day=String(d.getDate()).padStart(2,'0');
+
+  return {
+    date:d,
+    title:`${day} ${months[d.getMonth()]} ${d.getFullYear()} / ${weekdays[d.getDay()]}`
+  };
+}
+
+function getCenEUOffset(date){
+  const offsetMin = -date.getTimezoneOffset();
+
+  const sign = offsetMin >= 0 ? "+" : "-";
+  const abs = Math.abs(offsetMin);
+  const hh = String(Math.floor(abs / 60)).padStart(2,'0');
+  const mm = String(abs % 60).padStart(2,'0');
+
+  return {
+    offset: `${sign}${hh}:${mm}`,
+    label: offsetMin === 120 ? "CEST" : "CET"
+  };
+}
+
+function saveMd(id,offset){
+  const base=document.getElementById('startDate').value;
+  if(!base) return alert("Set start date");
+
+  const {date,title}=formatDate(base,offset);
+
+  const text=document.getElementById(id).value;
+
+  // create local 23:59 date in system timezone (central Europe)
+  const d = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 0);
+  const tz = getCenEUOffset(d);
+
+  const created = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')} 23:59:00${tz.offset}`;
+
+  const allTags=[
+    ...tags[id].general.map(t=>t.toLowerCase()),
+    ...tags[id].location.map(t=>t.toLowerCase())
+  ];
+
+  const md =
+`---
+title: ${title}
+created: ${created}
+tags:
+${allTags.map(t=>`  - ${t}`).join("\n")}
+---
+
+# ${title}
+
+${text}
+
+🏷️ ${tags[id].general.join(", ") || "-"}
+📍 ${tags[id].location.join(", ") || "-"}`;
+
+  const blob=new Blob([md],{type:"text/markdown"});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`${id}.md`;
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
 function copyToClipboard(fieldId) {
@@ -171,6 +422,7 @@ function copyToClipboard(fieldId) {
     });
 }
 
-    </script>
+</script>
+
 </body>
 </html>
