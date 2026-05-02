@@ -368,6 +368,22 @@ function getCenEUOffset(date){
   };
 }
 
+function formatMarkdownLineBreaks(text){
+  const normalized = text.replace(/\r\n/g, "\n");
+  const lines = normalized.split("\n");
+
+  return lines.map((line, index) => {
+    const isLastLine = index === lines.length - 1;
+    const nextLine = lines[index + 1] || "";
+
+    if (line.trim() !== "" && !isLastLine && nextLine.trim() !== "") {
+      return line.replace(/\s*$/, "  ");
+    }
+
+    return line;
+  }).join("\n");
+}
+
 function saveMd(id,offset){
   const base=document.getElementById('startDate').value;
   if(!base) return alert("Set start date");
@@ -375,6 +391,7 @@ function saveMd(id,offset){
   const {date,title}=formatDate(base,offset);
 
   const text=document.getElementById(id).value;
+  const formattedText = formatMarkdownLineBreaks(text);
 
   // create local 23:59 date in system timezone (central Europe)
   const d = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 0);
@@ -397,9 +414,12 @@ ${allTags.map(t=>`  - ${t}`).join("\n")}
 
 # ${title}
 
-${text}
+${formattedText}
+
+---
 
 🏷️ ${tags[id].general.join(", ") || "-"}
+
 📍 ${tags[id].location.join(", ") || "-"}`;
 
   const blob=new Blob([md],{type:"text/markdown"});
