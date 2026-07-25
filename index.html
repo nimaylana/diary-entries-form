@@ -14,6 +14,7 @@
 <div class="container">
 <label>First entry date</label>
 <input type="date" id="startDate">
+<button class="save-btn" onclick="downloadAll()">Download all</button>
 </div>
 
 <div class="row">
@@ -440,6 +441,54 @@ function copyToClipboard(fieldId) {
     }).catch(err => {
         console.error('Failed to copy text: ', err);
     });
+}
+
+function downloadAll(){
+  const base=document.getElementById('startDate').value;
+  if(!base) return alert("Set start date");
+
+  const dayIds = ['sa', 'so', 'mo', 'di', 'mi', 'do', 'fr'];
+  
+  dayIds.forEach((id, offset) => {
+    const {date,title}=formatDate(base, offset);
+    const text=document.getElementById(id).value;
+    const formattedText = formatMarkdownLineBreaks(text);
+
+    const d = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 0);
+    const tz = getCenEUOffset(d);
+
+    const created = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')} 23:59:00${tz.offset}`;
+
+    const allTags=[
+      ...tags[id].general.map(t=>t.toLowerCase()),
+      ...tags[id].location.map(t=>t.toLowerCase())
+    ];
+
+    const md =
+`---
+title: ${title}
+created: ${created}
+tags:
+${allTags.map(t=>`  - ${t}`).join("\n")}
+---
+
+# ${title}
+
+${formattedText}
+
+---
+
+🏷️ ${tags[id].general.join(", ") || "-"}
+
+📍 ${tags[id].location.join(", ") || "-"}`;
+
+    const blob=new Blob([md],{type:"text/markdown"});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download=`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')} ${id}.md`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
 }
 
 </script>
